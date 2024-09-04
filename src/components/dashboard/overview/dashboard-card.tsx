@@ -7,17 +7,17 @@ import type { SxProps } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { CurrencyDollar as CurrencyDollarIcon } from '@phosphor-icons/react/dist/ssr/CurrencyDollar';
 
-export interface BudgetProps {
+export interface DashboardCardProps {
   diff?: number;
   sx?: SxProps;
   value: string;
   title: string;
 }
 
-export function Budget({ diff, sx, value, title }: Readonly<BudgetProps>): React.JSX.Element {
+export function DashboardCard({ diff, sx, value, title }: Readonly<DashboardCardProps>): React.JSX.Element {
   return (
     <Card sx={sx}>
-      <CardContent>
+      <CardContent sx={{ padding: '16px' }}>
         <Stack spacing={3}>
           <Stack direction="row" sx={{ alignItems: 'flex-start', justifyContent: 'space-between' }} spacing={3}>
             <Stack spacing={1}>
