@@ -18,7 +18,12 @@ export interface LogoProps {
   width?: number;
 }
 
-export function Logo({ color = 'dark', emblem, height = HEIGHT, width = WIDTH }: LogoProps): React.JSX.Element {
+export function Logo({
+  color = 'dark',
+  emblem,
+  height = HEIGHT,
+  width = WIDTH,
+}: Readonly<LogoProps>): React.JSX.Element {
   let url: string;
 
   if (emblem) {
@@ -44,7 +49,7 @@ export function DynamicLogo({
   height = HEIGHT,
   width = WIDTH,
   ...props
-}: DynamicLogoProps): React.JSX.Element {
+}: Readonly<DynamicLogoProps>): React.JSX.Element {
   const { colorScheme } = useColorScheme();
   const color = colorScheme === 'dark' ? colorDark : colorLight;
 
