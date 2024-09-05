@@ -10,8 +10,12 @@ import { CurrencyDollar as CurrencyDollarIcon } from '@phosphor-icons/react/dist
 export interface DashboardCardProps {
   diff?: number;
   sx?: SxProps;
-  value: string;
+  value: number;
   title: string;
+}
+
+export function formatNumber(number: number): string {
+  return number.toLocaleString('en-US');
 }
 
 export function DashboardCard({ diff, sx, value, title }: Readonly<DashboardCardProps>): React.JSX.Element {
@@ -24,7 +28,7 @@ export function DashboardCard({ diff, sx, value, title }: Readonly<DashboardCard
               <Typography color="text.secondary" variant="overline">
                 {title}
               </Typography>
-              <Typography variant="h4">{value}</Typography>
+              <Typography variant="h4">{formatNumber(value)}</Typography>
             </Stack>
             <Avatar sx={{ backgroundColor: 'var(--mui-palette-primary-main)', height: '56px', width: '56px' }}>
               <CurrencyDollarIcon fontSize="var(--icon-fontSize-lg)" />
@@ -34,7 +38,7 @@ export function DashboardCard({ diff, sx, value, title }: Readonly<DashboardCard
             <Stack sx={{ alignItems: 'center' }} direction="row" spacing={2}>
               <Stack sx={{ alignItems: 'center' }} direction="row" spacing={0.5}>
                 <Typography color="var(--mui-palette-success-main)" variant="body2">
-                  {diff}%
+                  {diff.toFixed(2)}%
                 </Typography>
               </Stack>
             </Stack>

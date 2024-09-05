@@ -14,10 +14,10 @@ export default function Page(): React.JSX.Element {
     <Stack spacing={3}>
       <Stack spacing={{ xs: 1, sm: 2 }} direction="row" useFlexGap sx={{ flexWrap: 'wrap' }}>
         <Grid>
-          <DashboardCard title="Plan Consultas JCE" sx={{ height: '100%' }} value="500" />
+          <DashboardCard title="Plan Consultas JCE" sx={{ height: '100%' }} value={1000} />
         </Grid>
-        <DashboardCard title="Consultas Realizadas" diff={2.65} sx={{ height: '100%' }} value="13" />
-        <DashboardCard title="Consultas Disponibles" diff={97.4} sx={{ height: '100%' }} value="487" />
+        <DashboardCard title="Consultas Realizadas" diff={2.65} sx={{ height: '100%' }} value={13} />
+        <DashboardCard title="Consultas Disponibles" diff={97.4} sx={{ height: '100%' }} value={487} />
       </Stack>
       <Stack spacing={{ xs: 1, sm: 2 }}>
         <HealthCheck {...API_STATUS_DATA} sx={{ height: '100%', lg: 6 }} />
