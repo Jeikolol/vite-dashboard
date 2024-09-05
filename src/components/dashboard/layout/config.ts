@@ -1,11 +1,34 @@
 import type { NavItemConfig } from '@/types/nav';
 import { paths } from '@/paths';
 
-export const navItems = [
-  { key: 'overview', title: 'Overview', href: paths.dashboard.overview, icon: 'chart-pie' },
-  { key: 'customers', title: 'Customers', href: paths.dashboard.customers, icon: 'users' },
-  { key: 'integrations', title: 'Integrations', href: paths.dashboard.integrations, icon: 'plugs-connected' },
-  { key: 'settings', title: 'Settings', href: paths.dashboard.settings, icon: 'gear-six' },
-  { key: 'account', title: 'Account', href: paths.dashboard.account, icon: 'user' },
-  { key: 'error', title: 'Error', href: paths.errors.notFound, icon: 'x-square' },
-] satisfies NavItemConfig[];
+export const navItems: NavItemConfig[] = [
+  {
+    key: 'dashboard',
+    title: 'Dashboards',
+    items: [
+      { key: 'home', title: 'Inicio', href: paths.dashboard.overview, icon: 'home' },
+    ]
+  },
+  {
+    key: 'general',
+    title: 'General',
+    items: [
+      {
+        key: 'config', title: 'Configuracion', href: paths.config.settings, icon: 'config', items: [
+          { key: 'home', title: 'Inicio', href: paths.dashboard.overview, icon: 'home' },
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+        ]
+      },
+      {
+        key: 'config', title: 'Configuracion', href: paths.config.settings, icon: 'config', items: [
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+          { key: 'home', title: 'Inicio', href: paths.config.settings, icon: 'home' },
+        ]
+      },
+    ]
+  }
+];
